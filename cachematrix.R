@@ -9,6 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
                 x <<- y
                 m <<- NULL
         }
+        # get x matrix
         get <- function() x
         setsolve <- function(solve) m <<- solve
         getsolve <- function() m
@@ -27,6 +28,7 @@ cacheSolve <- function(x, ...) {
                 message("getting cached data")
                 return(m)
         }
+        # whether the matrix has a inverse matrix?
         data <- x$get()
         m <- solve(data, ...)
         x$setsolve(m)
